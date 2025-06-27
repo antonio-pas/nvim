@@ -10,7 +10,7 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.smartindent = true
 
-vim.opt.winborder = "single"
+vim.opt.winborder = "none"
 vim.opt.signcolumn = 'yes:1'
 
 vim.opt.hidden = true
@@ -21,5 +21,7 @@ vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.diagnostic.config({ virtual_text = true })
 vim.cmd("set completeopt+=noselect,fuzzy")
-vim.cmd("colorscheme retrobox")
+vim.opt.background = "dark"
+vim.cmd.colorscheme "kanagawa-dragon"
 vim.g.mapleader = " "
+vim.opt.mouse = 'a'
