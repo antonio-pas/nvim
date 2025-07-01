@@ -29,20 +29,21 @@ return {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
     build = ':TSUpdate',
-    opts = {
-      highlight = { enable = true },
-      indent = { enable = true },
-    },
+    branch = 'main',
+    -- opts = {
+    --   highlight = { enable = true },
+    --   indent = { enable = true },
+    -- },
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-      -- vim.api.nvim_create_autocmd('FileType', {
-      --   pattern = { 'rust', 'typescript', 'html', 'css', 'typescriptreact', 'javascriptreact', 'javascript', 'json', "python", 'c', 'cpp' },
-      --   callback = function()
-      --     vim.treesitter.start()
-      --     vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-      --     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-      --   end,
-      -- })
+      -- require("nvim-treesitter.configs").setup(opts)
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = { 'rust', 'typescript', 'html', 'css', 'typescriptreact', 'javascriptreact', 'javascript', 'json', "python", 'c', 'cpp' },
+        callback = function()
+          vim.treesitter.start()
+          vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
     end
   },
   {
@@ -66,5 +67,23 @@ return {
      dependencies = { "MunifTanjim/nui.nvim" },
      opts = {},
   },
-  { 'wakatime/vim-wakatime', lazy = false }
+  { 'wakatime/vim-wakatime', lazy = false },
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+      "TmuxNavigatorProcessList",
+    },
+    keys = {
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  }
 }
