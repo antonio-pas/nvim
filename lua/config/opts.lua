@@ -22,6 +22,6 @@ vim.opt.termguicolors = true
 vim.diagnostic.config({ virtual_text = true })
 vim.cmd("set completeopt+=noselect,fuzzy")
 vim.opt.background = "dark"
-vim.cmd.colorscheme "kanagawa-dragon"
+vim.cmd.colorscheme "kanagawa"
 vim.g.mapleader = " "
 vim.opt.mouse = 'a'

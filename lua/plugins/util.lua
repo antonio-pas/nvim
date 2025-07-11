@@ -16,15 +16,15 @@ return {
       }
     end,
   },
-  {
-    "folke/lazydev.nvim",
-    ft = "lua",
-    opts = {
-      library = {
-        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-      },
-    },
-  },
+  -- {
+  --   "folke/lazydev.nvim",
+  --   ft = "lua",
+  --   opts = {
+  --     library = {
+  --       { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+  --     },
+  --   },
+  -- },
   {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
@@ -45,18 +45,6 @@ return {
         end,
       })
     end
-  },
-  {
-    "goolord/alpha-nvim",
-    dependencies = { 'echasnovski/mini.icons' },
-    -- dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      local startify = require("alpha.themes.startify")
-      startify.file_icons.provider = "devicons"
-      require("alpha").setup(
-        startify.config
-      )
-    end,
   },
   { "JoosepAlviste/nvim-ts-context-commentstring", opts = {} },
   { 'numToStr/Comment.nvim', opts = {} },
