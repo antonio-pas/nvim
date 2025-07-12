@@ -1,5 +1,10 @@
 return {
   cmd = { 'tailwindcss-language-server', '--stdio' },
+  settings = {
+    tailwindCSS = {
+      classFunctions = { "cva", "cx" },
+    },
+  },
   filetypes = {
     'html',
     'javascript',
